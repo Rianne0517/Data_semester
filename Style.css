@@ -2,21 +2,21 @@ h1{
     color: white;
     float: left;
     font-family: "Open Sans", sans-serif;
-    font-size: 20mm;
+    font-size: 20xp;
 }
 
 h2{
   Color: white;
   float: left;
   font-family: "Open Sans", sans-serif;
-  font-size: 16mm;
+  font-size: 16xp;
 
 }
 h3{
   Color: white;
   float: left;
   font-family: "Open Sans", sans-serif;
-  font-size: 34mm;
+  font-size: 20xp;
 
 }
 body {
@@ -34,8 +34,8 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    width: 6cm; /* Set the width of the button */
-    height: 6cm; /* Set the height of the button */
+    width: 4cm; /* Set the width of the button */
+    height: 4cm; /* Set the height of the button */
   }
 
   .round-button {
