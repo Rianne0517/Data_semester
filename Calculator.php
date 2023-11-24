@@ -14,6 +14,7 @@ if(isset($save))
     //de hellinghoek van de bocht
     $o= (180);
     
+    //Berekening max snelheid in een bocht 
     $resul= ($mu * $g * $o * $r);
     $taat= pi();
     $resultaat= $resul / $taat;
@@ -22,11 +23,12 @@ if(isset($save))
 		
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="Style.css"> 
 </head>
 
 <body>
@@ -46,6 +48,7 @@ if(isset($save))
                     <input type="number" name="" class="form-control" placeholder=""
                         value="<?php  echo @$gewichtauto;?>">
                 </div>
+                <label>hoi</label>
             </tr>
             <tr>
                 <div>
