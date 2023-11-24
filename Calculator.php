@@ -1,32 +1,37 @@
 <?php 
-
+//Opent csv bestand
+//$file = fopen("bestandnaam.csv", "r");
+//while (! feof($file))
+//{
+    //print_r(fgetcsv($file));
+//}
 extract($_POST);
 if(isset($save))
 {
     $gewichtcoureur;
     $gewichtauto;
-    //de versnelling door zwaartekracht 
+    //de versnelling door zwaartekracht in meter per seconde in het kwadraat
     $g= (9.81);
-    //de bochtstraal 
-    $r=(15.2);
-    //de wrijvingscoëfficiënt tussen de banden en het wegdek
-    $mu= (0.8);
-    //de hellinghoek van de bocht
-    $o= (180);
-    
-    $resul= ($mu * $g * $o * $r);
-    $taat= pi();
-    $resultaat= $resul / $taat;
-    $max= sqrt($resultaat) ;
-    $max_snelheid= round($max);      
-		
+    //de bochtradius in meters 
+    $r=(225);
+    //de wrijvingscoëfficiënt tussen de banden en het wegdek, de aanname is dat het voor alle f1 auto's hetzelfde is
+    $mu= (1.5);
+        
+    //Berekening max snelheid in een bocht 
+    $resultaat= ($mu * $g * $r);
+    $max= sqrt($resultaat);
+    $kmh= ($max * 3.6);
+    $max_snelheid= round($kmh);      
+
 }
+//Sluit het xsv bestand
+//fclose($file)
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
 </head>
 
 <body>
@@ -57,7 +62,7 @@ if(isset($save))
             <tr>
                 <div class="form-group row input-group">
                     <div class="col-sm-12 mb-3 mb-sm-0">
-                        <label>Maximale snelheid om de bocht te nemen</label>
+                        <label>Maximale snelheid om de bocht te nemen, in kilometer per uur</label>
                         <input type="number" placeholder="" name="res" class="form-control" readonly="readonly"
                             disabled="disabled" value="<?php  echo @$max_snelheid;?>" />
                     </div>
