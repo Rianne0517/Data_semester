@@ -2,7 +2,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Zwarte achtergrond voor de hele pagina */
+    background-color: white; /* Zwarte achtergrond voor de hele pagina */
 }
 
 .header {
@@ -26,42 +26,68 @@ body {
     font-size: 0.8em;
 }
 
-.header-text .championship-text {
+.header-text .grandprix-text{
     color: white;
-    font-size: 1.2em;
+    font-size: 2em;
     font-weight: bold;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-    padding: 15px;
-}
-
-.vertical {
-    border-left: 7px solid white;
-    height: 20cm;
-    position:absolute;
-    top: 0%;
-    left: 50%;
-}
-
-.horizontal1 {
-    border-top: 7px solid white; /* Set the border style for the top side */
-    width: 20.2cm; /* Set the width of the line */
-    position: absolute; /* Set the position to absolute */
-    top: 70%; /* Align the top of the line at 50% from the top of its containing element */
-    left: 0; /* Align the left side of the line at 0% from the left of its containing element */ 
-}
-
-.horizontal2 {
-    border-top: 7px solid white; /* Set the border style for the top side */
-    width: 20.2cm; /* Set the width of the line */
-    position: absolute; /* Set the position to absolute */
-    top: 60%; /* Align the top of the line at 50% from the top of its containing element */
-    left: 50%; /* Align the left side of the line at 0% from the left of its containing element */
     
 }
 
-.img
+.grid{
+    display: grid;
+    grid-gap: 8px;
+    grid-template-areas:
+      "header header"
+      "circuit bocht"
+      "driver max-snelheid";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 1fr 1fr;
+  }
+
+.grid-item1 {
+    background-color: #000000;
+    padding: 20px;
+    text-align: start;
+    font-size: 1em;
+    color: #ffffff;
+  }
+.grid-item {
+    background-color: #000000;
+    padding: 20px;
+    text-align: start;
+    font-size: 1em;
+    color: #ffffff;
+}
+.circuit-img{
+    display: block;
+    text-align: center;
+}
+
+.Dropdown {
+    font-family:'Open Sans', sans-serif;
+    font-size: 1em;
+    margin: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+  
+
+  select {
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+    background-color: white; /* Choose your preferred background color */
+    border: white;
+    border-width: 2xp;
+    border-radius: 50%;
+    display: block;
+    align-items: center;
+    color: #fff; /* Choose your preferred text color */
+    font-size: 24px; /* Choose your preferred font size */
+    font-weight: bold;
+}
