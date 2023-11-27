@@ -8,17 +8,18 @@
 extract($_POST);
 if(isset($save))
 {
-    $gewichtcoureur;
-    $gewichtauto;
+    //$gewichtcoureur;
+    //$gewichtauto;
+
     //de versnelling door zwaartekracht in meter per seconde in het kwadraat
     $g= (9.81);
     //de bochtradius in meters 
     $r=(225);
     //de wrijvingscoëfficiënt tussen de banden en het wegdek, de aanname is dat het voor alle f1 auto's hetzelfde is
     $mu= (1.5);
-        
+              
     //Berekening max snelheid in een bocht 
-    $resultaat= ($mu * $g * $r);
+    $resultaat= ($mu * $g * $r * $bocht_nr);
     $max= sqrt($resultaat);
     $kmh= ($max * 3.6);
     $max_snelheid= round($kmh);      
@@ -40,16 +41,24 @@ if(isset($save))
         <table>
             <tr>
                 <div>
-                    <label>Gewicht coureur in kilogrammen </label>
-                    <input type="number" name="" class="form-control" placeholder=""
-                        value="<?php  echo @$gewichtcoureur;?>">
+                    <!--<label>Gewicht coureur in kilogrammen </label>
+                    <input type="number" name="" class="form-control" placeholder="" value="<?php  echo @$gewichtcoureur;?>">-->
                 </div>
             </tr>
             <tr>
                 <div>
-                    <label>Gewicht auto in kilogrammen</label>
-                    <input type="number" name="" class="form-control" placeholder=""
-                        value="<?php  echo @$gewichtauto;?>">
+                    <!--<label>Gewicht auto in kilogrammen</label>
+                    <input type="number" name="" class="form-control" placeholder="" value="<?php  echo isset($gewichtauto)?>"> -->
+                </div>
+            </tr>
+            <tr>
+                <div class="form-group row input-group">
+                    <div class="col-sm-12 mb-3 mb-sm-0">
+                        <label> Selecteer bocht</label>
+                        <input type="number" name="bocht_nr" class="form-control" placeholder=""
+                            value="<?php  echo @$bocht_nr;?>">
+
+                    </div>
                 </div>
             </tr>
             <tr>
@@ -71,5 +80,4 @@ if(isset($save))
         </table>
     </form>
 </body>
-
 </html>
