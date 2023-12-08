@@ -1,13 +1,17 @@
+/*Main
+Styling: Team 1 
+*/
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000; /* Zwarte achtergrond voor de hele pagina */
+    background-color: #000; 
 }
 
+/*logo + tekst */
 .header {
-    padding: 20px; 
-    text-align: left; 
+    padding: 20px;
+    text-align: left;
 }
 
 .logo-container {
@@ -17,24 +21,25 @@ body {
 }
 
 .header img {
-    width: 200px; 
+    width: 200px;
     height: auto;
 }
 
-.header-text .power-text {
+.header-text .power-text,
+.header-text .championship-text {
     color: white;
     font-size: 0.8em;
 }
 
 .header-text .championship-text {
-    color: white;
     font-size: 1.2em;
     font-weight: bold;
 }
 
+/* Homepage */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* Nu 7 items per rij */
+    grid-template-columns: repeat(7, 1fr); /* 7 items per rij */
     gap: 15px;
     padding: 15px;
     align-items: start;
@@ -60,4 +65,126 @@ body {
 .grid-item span {
     display: block;
     margin-top: 8px;
+}
+
+/*Circuitpage*/
+.container {
+    max-width: 100%;
+}
+
+.row {
+    display: flex; 
+    flex-wrap: wrap; 
+}
+
+.col-md-6 {
+    display: flex; 
+    flex: 1; 
+}
+
+.box {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #999;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-grow: 1; 
+    height: 100%; 
+    flex-direction: column;
+    justify-content: flex-start;
+    flex: 1; 
+}
+
+p{
+    font-weight: bold;
+}
+
+.section-title {
+    font-size: 1.2rem; 
+    border-bottom: 1px solid #666; 
+    padding-bottom: 10px; 
+    margin-bottom: 15px; 
+}
+
+.circuit-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px; 
+}
+
+.circuit-image-first {
+    max-width: 51%; 
+    height: auto;
+}
+
+.racer-icon {
+    width: 20px; 
+    height: 20px; 
+    margin-right: 10px; 
+}
+
+.select-wrapper {
+    margin-left: 15px;
+}
+
+.form-select.form-select-sm {
+    width: auto; 
+}
+
+.gegevens-bocht-title {
+    margin-top: 20px; 
+    margin-bottom: 10px; 
+}
+
+.sub-section-title {
+    text-align: center; 
+    margin-bottom: 10px; 
+    color: #fff; 
+    font-size: 1rem; 
+}
+
+.data-box {
+    background-color: #7c8a80; 
+    padding: 10px;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    align-self: center;
+    width: 75%;
+}
+
+.lighter-bg {
+    background-color: #7c8a80; 
+}
+
+.speed-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #008f95;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    align-self: center;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .box {
+        margin-bottom: 15px;
+    }
+
+    .row > .col-md-6 {
+        display: flex;
+        flex: 1; 
+    }
+
+    .col-md-6 .box {
+        height: 100%; 
+    }
 }
