@@ -2,7 +2,7 @@
 extract($_POST);
 if(isset($save))
 {
-    //$row = 1;
+    $bocht_found == false;
     //Opent csv bestand
     if (($file = fopen("database.csv", "r")) !== FALSE) 
     {
@@ -10,20 +10,32 @@ if(isset($save))
         {
             if ($data[1] == $bocht_nr)
             {
+                //$r is de bocht straal in meters
                 $r = $data[3];
+                $bocht_found = true;
                 break;
-            }                    
-        }   
-        //de versnelling door zwaartekracht in meter per seconde in het kwadraat
-        $g= (9.81);               
-        //de wrijvingscoëfficiënt tussen de banden en het wegdek, de aanname is dat het voor alle f1 auto's hetzelfde is
-        $mu= (1.5);                
-        //Berekening max snelheid in een bocht 
-        $resultaat= ($mu * $g * $r);
-        $max= sqrt($resultaat);
-        $kmh= ($max * 3.6);
-        //rond het getal af op hele kilometers per uur 
-        $max_snelheid= round($kmh);    
+            }            
+        }     
+    
+        if ($bocht_found)
+        {
+            //de versnelling door zwaartekracht in meter per seconde in het kwadraat
+            $g= (9.81);               
+            //de wrijvingscoëfficiënt tussen de banden en het wegdek, de aanname is dat het voor alle f1 auto's hetzelfde is
+            $mu= (1.5);                
+            //Berekening max snelheid in een bocht 
+            $resultaat= ($mu * $g * $r);
+            $max= sqrt($resultaat);
+            $kmh= ($max * 3.6);
+            //rond het getal af op hele kilometers per uur 
+            $max_snelheid= round($kmh);    
+        }
+
+        else
+        {           
+            echo '<script>alert("Bocht niet gevonden")</script>';               
+        }
+        
     }
     //Sluit csv bestand
     fclose($file);
