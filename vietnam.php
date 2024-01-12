@@ -9,8 +9,8 @@ if(isset($save))
     {
         while (($data = fgetcsv($file, 1000, ";")) !== FALSE) 
         {
-            //als baan_id == 1 en het gegeven bocht nummer over een komt met die uit de database
-            if ($data[0] == 1 and $data[3] == $bocht_nr )
+            //als baan_id == 3 en het gegeven bocht nummer over een komt met die uit de database
+            if ($data[0] == 3 and $data[3] == $bocht_nr )
             {
                 //$r is de bocht straal in meters
                 $r = $data[5];
@@ -49,13 +49,13 @@ if(isset($save))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circuit Zandvoort</title>
+    <title>Circuit Vietnam</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styling/style.css">
 </head>
 
 <body>
-<form method="post" action="circuit.php">
+<form method="post" action="vietnam.php">
     <div class="header">
         <div class="logo-container">
             <a href="homepage.html">
@@ -63,7 +63,7 @@ if(isset($save))
             </a>
             <div class="header-text">
                 <p class="power-text">Powered by Speedway Dynamics</p>
-                <h1 class="championship-text">Dutch Grand Prix 2022</h1>
+                <h1 class="championship-text">Vietnam Grand Prix 2024</h1>
             </div>
         </div>
     </div>
@@ -73,10 +73,10 @@ if(isset($save))
                 <div class="box p-3">
                     <h2 class="section-title">Circuit Informatie</h2>
                     <div class="circuit-info d-flex align-items-center">
-                        <img src="images/dddd.png" alt="Circuit"
+                        <img src="images/Vietnam.jpg" alt="Circuit"
                             class="img-fluid circuit-image circuit-image-first mb-3">
                         <div class="select-wrapper">
-                            <label> Selecteer bocht (1 tot 14)</label>
+                            <label> Selecteer bocht (1 tot 20)</label>
                             <input type="number" name="bocht_nr" class="form-control" placeholder=""
                                 value="<?php  echo @$bocht_nr;?>">
                         </div>
@@ -93,13 +93,17 @@ if(isset($save))
                                     style="float: right;">
 
                                     <?php
-                                if ($bocht_found) {
-                                    echo $r . " meter";
-                                } else {
-                                    echo "() meter";
-                                }
-                                ?>
-
+                                     if ($bocht_found)
+                                    {
+                                        echo $r;
+                                        echo" meter";
+                                    } 
+                                    if ($bocht_found = false)
+                                    {
+                                        echo "... meter";
+                                    }
+                                    
+                                    ?></span></p>
                     </div>
                     <div class="data-box p-2 mx-auto lighter-bg">
                         <p>
